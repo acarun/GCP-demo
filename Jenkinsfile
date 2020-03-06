@@ -27,7 +27,7 @@ pipeline {
         stage("Build image") {
             steps {
                 script {
-                    myapp = docker.build("acarun_apk/k8s:${env.BUILD_ID}")
+                    myapp = docker.build("acarunk/k8s:${env.BUILD_ID}")
                 }
             }
         }
@@ -35,12 +35,11 @@ pipeline {
             steps {
                 script {
 			sh 'docker image ls'
-			sh 'docker container prune'
-			sh 'docker images prune -a'
 			docker.withRegistry('https://registry.hub.docker.com', 'Docker-hub-credentials') 
 			  {
 			    
-                            myapp.push("${env.BUILD_ID}")
+                           myapp.push("${env.BUILD_ID}")
+				
                     }
                 }
             }
