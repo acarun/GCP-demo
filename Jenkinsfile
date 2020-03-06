@@ -37,8 +37,8 @@ pipeline {
 			sh 'docker image ls'
 			sh 'docker container prune'
 			sh 'docker images prune -a'
-			sh 'docker system info | grep -E 'Usename|Registry''
-                    docker.withRegistry('https://registry.hub.docker.com', 'Docker-hub-credentials') {
+			docker.withRegistry('https://registry.hub.docker.com', 'Docker-hub-credentials') 
+			  {
 			    
                             myapp.push("${env.BUILD_ID}")
                     }
