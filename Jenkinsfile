@@ -51,14 +51,14 @@ pipeline {
 				sh 'pwd'
                                     script{
 	                        try{
-	                            sh ‘kubectl apply -f .’
-	                            sh ‘kubectl apply -f .’
+	                            sh 'kubectl apply -f .'
+	                            sh 'kubectl apply -f .'
 	
 
 	                          }catch(error)
 			          {
-	                            sh ‘kubectl create -f .’
-	                            sh ‘kubectl create -f .’
+	                            sh 'kubectl create -f .'
+	                            sh 'kubectl create -f .'
 	
 
 	                          }
