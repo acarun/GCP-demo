@@ -34,6 +34,7 @@ pipeline {
         stage("Push image") {
             steps {
                 script {
+			sh 'docker image ls'
                     docker.withRegistry('https://registry.hub.docker.com', 'Docker-hub-credentials') {
                             myapp.push("${env.BUILD_ID}")
                     }
