@@ -35,6 +35,8 @@ pipeline {
             steps {
                 script {
 			sh 'docker image ls'
+			sh 'docker container prune'
+			sh 'docker images prune -a'
                     docker.withRegistry('https://registry.hub.docker.com', 'Docker-hub-credentials') {
                             myapp.push("${env.BUILD_ID}")
                     }
