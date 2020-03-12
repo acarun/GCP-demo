@@ -4,7 +4,7 @@ pipeline {
         PROJECT_ID = 'arun-devops-265211'
         CLUSTER_NAME = 'kube-arun'
         LOCATION = 'us-central1-a'
-        CREDENTIALS_ID = 'kubernetes'
+        CREDENTIALS_ID = 'Kubernetes'
     }
     stages {
         stage("Checkout code") {
