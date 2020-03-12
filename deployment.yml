@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: webapp1
-        image: acarun_apk/k8s:tagversion
+        image: acarunk/k8s:tagversion
         ports:
         - containerPort: 8080
 ---
